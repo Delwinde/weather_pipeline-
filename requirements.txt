@@ -1,0 +1,8 @@
+# Core pipeline dependencies (lightweight - required for ETL/ELT, tests, demo scripts)
+requests>=2.31.0
+pandas>=2.0.0
+pytest>=7.4.0
+
+# Optional - only needed if you run the Airflow DAG locally.
+# apache-airflow is a large install (500MB+). Install separately if needed:
+#   pip install apache-airflow apache-airflow-providers-standard

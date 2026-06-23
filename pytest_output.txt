@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.3, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/weather_pipeline
+plugins: anyio-4.13.0
+collecting ... collected 30 items
+
+tests/test_extractor.py::TestExtractLocation::test_successful_extraction PASSED [  3%]
+tests/test_extractor.py::TestExtractLocation::test_non_200_status_raises_api_response_error PASSED [  6%]
+tests/test_extractor.py::TestExtractLocation::test_missing_keys_raises_api_response_error PASSED [ 10%]
+tests/test_extractor.py::TestExtractLocation::test_connection_error_raises_after_retries PASSED [ 13%]
+tests/test_extractor.py::TestExtractAll::test_extract_all_success PASSED [ 16%]
+tests/test_extractor.py::TestExtractAll::test_extract_all_raises_when_all_locations_fail PASSED [ 20%]
+tests/test_loader.py::TestWeatherLoaderConnection::test_create_tables_requires_connection PASSED [ 23%]
+tests/test_loader.py::TestWeatherLoaderConnection::test_connect_and_close PASSED [ 26%]
+tests/test_loader.py::TestWeatherLoaderEndToEnd::test_full_load_creates_expected_rows PASSED [ 30%]
+tests/test_loader.py::TestWeatherLoaderEndToEnd::test_load_is_idempotent PASSED [ 33%]
+tests/test_loader.py::TestWeatherLoaderEndToEnd::test_load_staging PASSED [ 36%]
+tests/test_transformer.py::TestCleanColumnNames::test_lowercases_and_strips PASSED [ 40%]
+tests/test_transformer.py::TestStandardizeLocationNames::test_title_cases_and_strips PASSED [ 43%]
+tests/test_transformer.py::TestConvertDatetimeFields::test_converts_observation_time PASSED [ 46%]
+tests/test_transformer.py::TestConvertNumericFields::test_converts_strings_to_numeric PASSED [ 50%]
+tests/test_transformer.py::TestHandleMissingValues::test_drops_rows_missing_core_fields PASSED [ 53%]
+tests/test_transformer.py::TestHandleMissingValues::test_fills_missing_humidity_with_median PASSED [ 56%]
+tests/test_transformer.py::TestRemoveDuplicates::test_removes_duplicate_city_time_rows PASSED [ 60%]
+tests/test_transformer.py::TestValidateMeasurements::test_flags_out_of_range_temperature PASSED [ 63%]
+tests/test_transformer.py::TestCreateDerivedFields::test_creates_expected_columns PASSED [ 66%]
+tests/test_transformer.py::TestCreateDerivedFields::test_weather_category_mapping PASSED [ 70%]
+tests/test_transformer.py::TestFlattenRawExtracts::test_flattens_into_long_format PASSED [ 73%]
+tests/test_transformer.py::TestFlattenRawExtracts::test_raises_on_empty_input PASSED [ 76%]
+tests/test_transformer.py::TestFullTransform::test_transform_end_to_end PASSED [ 80%]
+tests/test_validator.py::TestDataValidator::test_valid_dataframe_passes PASSED [ 83%]
+tests/test_validator.py::TestDataValidator::test_empty_dataframe_fails PASSED [ 86%]
+tests/test_validator.py::TestDataValidator::test_missing_required_column_fails PASSED [ 90%]
+tests/test_validator.py::TestDataValidator::test_null_in_key_column_fails PASSED [ 93%]
+tests/test_validator.py::TestDataValidator::test_out_of_range_value_fails PASSED [ 96%]
+tests/test_validator.py::TestDataValidator::test_duplicate_records_fail PASSED [100%]
+
+============================== 30 passed in 0.72s ==============================

@@ -1,0 +1,23 @@
+======================================================================
+AIRFLOW DAG SIMULATION: weather_etl_pipeline
+======================================================================
+
+[TASK 1/4] extract_weather_data ... SUCCESS (5 locations extracted)
+[TASK 2/4] transform_weather_data ... 2026-06-14 20:21:33,956 | INFO     | transform.transformer | Starting transformation of 5 raw extracts
+2026-06-14 20:21:33,975 | INFO     | transform.transformer | Transformation complete: 360 rows produced
+SUCCESS (360 rows produced)
+[TASK 3/4] validate_weather_data ... 2026-06-14 20:21:33,976 | INFO     | validate.validator | Running data validation on 360 rows
+2026-06-14 20:21:33,978 | INFO     | validate.validator | Data validation passed.
+SUCCESS (all data quality checks passed)
+[TASK 4/4] load_weather_data ... 2026-06-14 20:21:33,979 | INFO     | load.loader | Connected to database at /home/claude/weather_pipeline/data/weather_warehouse.db
+2026-06-14 20:21:34,018 | INFO     | load.loader | Database tables created/verified successfully.
+2026-06-14 20:21:34,025 | INFO     | load.loader | dim_location upsert complete (5 candidate rows)
+2026-06-14 20:21:34,032 | INFO     | load.loader | dim_date upsert complete (3 candidate rows)
+2026-06-14 20:21:34,037 | INFO     | load.loader | dim_weather_condition upsert complete (7 candidate rows)
+2026-06-14 20:21:34,109 | INFO     | load.loader | Loaded 360 rows into fact_weather_observations
+2026-06-14 20:21:34,110 | INFO     | load.loader | Database connection closed.
+SUCCESS (loaded into star schema)
+
+======================================================================
+DAG RUN COMPLETE - all 4 tasks succeeded
+======================================================================

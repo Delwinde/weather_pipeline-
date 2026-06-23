@@ -1,0 +1,63 @@
+2026-06-14 20:27:28,191 | INFO     | transform.transformer | Starting transformation of 5 raw extracts
+2026-06-14 20:27:28,210 | INFO     | transform.transformer | Transformation complete: 360 rows produced
+2026-06-14 20:27:28,210 | INFO     | validate.validator | Running data validation on 360 rows
+2026-06-14 20:27:28,212 | INFO     | validate.validator | Data validation passed.
+2026-06-14 20:27:28,213 | INFO     | load.loader | Connected to database at /home/claude/weather_pipeline/data/weather_warehouse.db
+2026-06-14 20:27:28,246 | INFO     | load.loader | Database tables created/verified successfully.
+2026-06-14 20:27:28,252 | INFO     | load.loader | dim_location upsert complete (5 candidate rows)
+2026-06-14 20:27:28,258 | INFO     | load.loader | dim_date upsert complete (3 candidate rows)
+2026-06-14 20:27:28,263 | INFO     | load.loader | dim_weather_condition upsert complete (7 candidate rows)
+2026-06-14 20:27:28,305 | INFO     | load.loader | Loaded 360 rows into fact_weather_observations
+2026-06-14 20:27:28,305 | INFO     | load.loader | Database connection closed.
+2026-06-14 20:27:29,076 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,077 | INFO     | extract.extractor | Successfully extracted data for Kumasi
+2026-06-14 20:27:29,078 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,080 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,081 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,081 | WARNING  | extract.extractor | Connection error on attempt 1/2: boom
+2026-06-14 20:27:29,081 | WARNING  | extract.extractor | Connection error on attempt 2/2: boom
+2026-06-14 20:27:29,083 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,083 | INFO     | extract.extractor | Successfully extracted data for Kumasi
+2026-06-14 20:27:29,083 | INFO     | extract.extractor | Extraction complete: 1/1 locations successful
+2026-06-14 20:27:29,084 | INFO     | extract.extractor | Extracting weather data for Kumasi, Ghana (lat=6.6885, lon=-1.6244)
+2026-06-14 20:27:29,084 | WARNING  | extract.extractor | Connection error on attempt 1/2: boom
+2026-06-14 20:27:29,084 | WARNING  | extract.extractor | Connection error on attempt 2/2: boom
+2026-06-14 20:27:29,084 | ERROR    | extract.extractor | Failed to extract data for Kumasi: Failed to connect to Open-Meteo API after 2 attempts: boom
+2026-06-14 20:27:29,086 | INFO     | load.loader | Connected to database at /tmp/tmpfkukbj8a.db
+2026-06-14 20:27:29,086 | INFO     | load.loader | Database connection closed.
+2026-06-14 20:27:29,091 | INFO     | load.loader | Connected to database at /tmp/tmp35aq6h7x.db
+2026-06-14 20:27:29,125 | INFO     | load.loader | Database tables created/verified successfully.
+2026-06-14 20:27:29,131 | INFO     | load.loader | dim_location upsert complete (2 candidate rows)
+2026-06-14 20:27:29,137 | INFO     | load.loader | dim_date upsert complete (1 candidate rows)
+2026-06-14 20:27:29,142 | INFO     | load.loader | dim_weather_condition upsert complete (2 candidate rows)
+2026-06-14 20:27:29,147 | INFO     | load.loader | Loaded 2 rows into fact_weather_observations
+2026-06-14 20:27:29,147 | INFO     | load.loader | Database connection closed.
+2026-06-14 20:27:29,150 | INFO     | load.loader | Connected to database at /tmp/tmpmobfky8d.db
+2026-06-14 20:27:29,180 | INFO     | load.loader | Database tables created/verified successfully.
+2026-06-14 20:27:29,185 | INFO     | load.loader | dim_location upsert complete (2 candidate rows)
+2026-06-14 20:27:29,190 | INFO     | load.loader | dim_date upsert complete (1 candidate rows)
+2026-06-14 20:27:29,194 | INFO     | load.loader | dim_weather_condition upsert complete (2 candidate rows)
+2026-06-14 20:27:29,198 | INFO     | load.loader | Loaded 2 rows into fact_weather_observations
+2026-06-14 20:27:29,202 | INFO     | load.loader | dim_location upsert complete (2 candidate rows)
+2026-06-14 20:27:29,207 | INFO     | load.loader | dim_date upsert complete (1 candidate rows)
+2026-06-14 20:27:29,211 | INFO     | load.loader | dim_weather_condition upsert complete (2 candidate rows)
+2026-06-14 20:27:29,215 | INFO     | load.loader | Loaded 2 rows into fact_weather_observations
+2026-06-14 20:27:29,215 | INFO     | load.loader | Database connection closed.
+2026-06-14 20:27:29,218 | INFO     | load.loader | Connected to database at /tmp/tmp1291shgy.db
+2026-06-14 20:27:29,248 | INFO     | load.loader | Database tables created/verified successfully.
+2026-06-14 20:27:29,254 | INFO     | load.loader | Loaded 2 rows into staging_weather_raw
+2026-06-14 20:27:29,254 | INFO     | load.loader | Database connection closed.
+2026-06-14 20:27:29,264 | WARNING  | transform.transformer | Dropped 1 rows with missing observation_time/city/temperature
+2026-06-14 20:27:29,271 | INFO     | transform.transformer | Removed 1 duplicate rows
+2026-06-14 20:27:29,274 | WARNING  | transform.transformer | Found 1 out-of-range values in 'temperature_2m'; setting to NaN
+2026-06-14 20:27:29,285 | INFO     | transform.transformer | Starting transformation of 2 raw extracts
+2026-06-14 20:27:29,295 | INFO     | transform.transformer | Removed 1 duplicate rows
+2026-06-14 20:27:29,296 | WARNING  | transform.transformer | Found 1 out-of-range values in 'temperature_2m'; setting to NaN
+2026-06-14 20:27:29,302 | INFO     | transform.transformer | Transformation complete: 3 rows produced
+2026-06-14 20:27:29,305 | INFO     | validate.validator | Running data validation on 2 rows
+2026-06-14 20:27:29,306 | INFO     | validate.validator | Data validation passed.
+2026-06-14 20:27:29,309 | INFO     | validate.validator | Running data validation on 0 rows
+2026-06-14 20:27:29,311 | INFO     | validate.validator | Running data validation on 2 rows
+2026-06-14 20:27:29,314 | INFO     | validate.validator | Running data validation on 2 rows
+2026-06-14 20:27:29,316 | INFO     | validate.validator | Running data validation on 2 rows
+2026-06-14 20:27:29,320 | INFO     | validate.validator | Running data validation on 2 rows
